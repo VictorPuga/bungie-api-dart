@@ -18,7 +18,8 @@ DestinyItemComponent _$DestinyItemComponentFromJson(Map<String, dynamic> json) {
     ..lockable = json['lockable'] as bool
     ..state = json['state'] as int
     ..overrideStyleItemHash = json['overrideStyleItemHash'] as int
-    ..expirationDate = json['expirationDate'] as String;
+    ..expirationDate = json['expirationDate'] as String
+    ..isWrapper = json['isWrapper'] as bool;
 }
 
 Map<String, dynamic> _$DestinyItemComponentToJson(
@@ -34,5 +35,6 @@ Map<String, dynamic> _$DestinyItemComponentToJson(
       'lockable': instance.lockable,
       'state': instance.state,
       'overrideStyleItemHash': instance.overrideStyleItemHash,
-      'expirationDate': instance.expirationDate
+      'expirationDate': instance.expirationDate,
+      'isWrapper': instance.isWrapper
     };

@@ -80,6 +80,8 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
     ..damageTypes = (json['damageTypes'] as List)?.map((e) => e as int)?.toList()
     ..defaultDamageType = json['defaultDamageType'] as int
     ..defaultDamageTypeHash = json['defaultDamageTypeHash'] as int
+    ..seasonHash = json['seasonHash'] as int
+    ..isWrapper = json['isWrapper'] as bool
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -138,6 +140,8 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'damageTypes': instance.damageTypes,
       'defaultDamageType': instance.defaultDamageType,
       'defaultDamageTypeHash': instance.defaultDamageTypeHash,
+      'seasonHash': instance.seasonHash,
+      'isWrapper': instance.isWrapper,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted

@@ -708,6 +708,29 @@ class GroupV2 {
       throw Exception(response.mappedBody);
     });
   }
+  /// Allows a founder to manually recover a group they can see in game but not on bungie.net
+  static Future<GroupMembershipSearchResponseResponse> recoverGroupForFounder(
+    HttpClient client,
+    int groupType,
+    String membershipId,
+    int membershipType,
+    Map<String, String> headers,
+  ) {
+    Map<String, dynamic> params = new Map();
+    HttpClientConfig config = HttpClientConfig(
+      'GET', 
+      "/GroupV2/Recover/${membershipType}/${membershipId}/${groupType}/",
+    );
+    config.bodyContentType = null;
+    config.params = params;
+    config.headers = headers;
+    return client.request(config).then((response) {
+      if (response.statusCode == 200) {
+        return GroupMembershipSearchResponseResponse.fromJson(response.mappedBody);
+      }
+      throw Exception(response.mappedBody);
+    });
+  }
   /// Get information about the groups that a given member has applied to or been invited to.
   static Future<GroupPotentialMembershipSearchResponseResponse> getPotentialGroupsForMember(
     HttpClient client,

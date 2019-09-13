@@ -11,4 +11,5 @@ class FireteamActivityType {
   static const int EscalationProtocol = 8;
   static const int Forge = 9;
   static const int Reckoning = 10;
+  static const int Menagerie = 11;
 }

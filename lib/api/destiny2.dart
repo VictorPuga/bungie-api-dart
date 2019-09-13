@@ -106,11 +106,13 @@ class Destiny2 {
   /// Returns a summary information about all profiles linked to the requesting membership type&#x2F;membership ID that have valid Destiny information. The passed-in Membership Type&#x2F;Membership ID may be a Bungie.Net membership or a Destiny membership. It only returns the minimal amount of data to begin making more substantive requests, but will hopefully serve as a useful alternative to UserServices for people who just care about Destiny data. Note that it will only return linked accounts whose linkages you are allowed to view.
   static Future<DestinyLinkedProfilesResponseResponse> getLinkedProfiles(
     HttpClient client,
+    bool getAllMemberships,
     String membershipId,
     int membershipType,
     Map<String, String> headers,
   ) {
     Map<String, dynamic> params = new Map();
+    params['getAllMemberships'] = getAllMemberships;
     HttpClientConfig config = HttpClientConfig(
       'GET', 
       "/Destiny2/${membershipType}/Profile/${membershipId}/LinkedProfiles/",

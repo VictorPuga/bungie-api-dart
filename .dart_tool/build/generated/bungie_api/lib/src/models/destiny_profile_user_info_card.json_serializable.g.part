@@ -6,6 +6,11 @@ DestinyProfileUserInfoCard _$DestinyProfileUserInfoCardFromJson(
     Map<String, dynamic> json) {
   return DestinyProfileUserInfoCard()
     ..dateLastPlayed = json['dateLastPlayed'] as String
+    ..applicableMembershipTypes = (json['applicableMembershipTypes'] as List)
+        ?.map((e) => e as int)
+        ?.toList()
+    ..isOverridden = json['isOverridden'] as bool
+    ..isCrossSavePrimary = json['isCrossSavePrimary'] as bool
     ..supplementalDisplayName = json['supplementalDisplayName'] as String
     ..iconPath = json['iconPath'] as String
     ..membershipType = json['membershipType'] as int
@@ -17,6 +22,9 @@ Map<String, dynamic> _$DestinyProfileUserInfoCardToJson(
         DestinyProfileUserInfoCard instance) =>
     <String, dynamic>{
       'dateLastPlayed': instance.dateLastPlayed,
+      'applicableMembershipTypes': instance.applicableMembershipTypes,
+      'isOverridden': instance.isOverridden,
+      'isCrossSavePrimary': instance.isCrossSavePrimary,
       'supplementalDisplayName': instance.supplementalDisplayName,
       'iconPath': instance.iconPath,
       'membershipType': instance.membershipType,

@@ -24,4 +24,5 @@ class DestinyItemType {
   static const int Ghost = 24;
   static const int Package = 25;
   static const int Bounty = 26;
+  static const int Wrapper = 27;
 }

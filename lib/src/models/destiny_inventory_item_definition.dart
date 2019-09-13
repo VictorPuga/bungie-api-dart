@@ -241,6 +241,14 @@ class DestinyInventoryItemDefinition {
 	@JsonKey(name:'defaultDamageTypeHash')
 	int defaultDamageTypeHash;
 
+	/// If this item is related directly to a Season of Destiny, this is the hash identifier for that season.
+	@JsonKey(name:'seasonHash')
+	int seasonHash;
+
+	/// If true, this is a dummy vendor-wrapped item template. Items purchased from Eververse will be &quot;wrapped&quot; by one of these items so that we can safely provide refund capabilities before the item is &quot;unwrapped&quot;.
+	@JsonKey(name:'isWrapper')
+	bool isWrapper;
+
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')

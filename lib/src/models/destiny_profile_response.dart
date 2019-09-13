@@ -1,6 +1,7 @@
 import 'single_component_response_of_destiny_vendor_receipts_component.dart';
 import 'single_component_response_of_destiny_inventory_component.dart';
 import 'single_component_response_of_destiny_profile_component.dart';
+import 'single_component_response_of_destiny_platform_silver_component.dart';
 import 'single_component_response_of_destiny_kiosks_component.dart';
 import 'single_component_response_of_destiny_plug_sets_component.dart';
 import 'single_component_response_of_destiny_profile_progression_component.dart';
@@ -47,6 +48,11 @@ class DestinyProfileResponse {
 	/// COMPONENT TYPE: Profiles
 	@JsonKey(name:'profile')
 	SingleComponentResponseOfDestinyProfileComponent profile;
+
+	/// Silver quantities for any platform on which this Profile plays destiny.
+	///  COMPONENT TYPE: PlatformSilver
+	@JsonKey(name:'platformSilver')
+	SingleComponentResponseOfDestinyPlatformSilverComponent platformSilver;
 
 	/// Items available from Kiosks that are available Profile-wide (i.e. across all characters)
 	/// This component returns information about what Kiosk items are available to you on a *Profile* level. It is theoretically possible for Kiosks to have items gated by specific Character as well. If you ever have those, you will find them on the characterKiosks property.

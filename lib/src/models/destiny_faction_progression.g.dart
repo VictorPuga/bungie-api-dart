@@ -21,7 +21,13 @@ DestinyFactionProgression _$DestinyFactionProgressionFromJson(
     ..levelCap = json['levelCap'] as int
     ..stepIndex = json['stepIndex'] as int
     ..progressToNextLevel = json['progressToNextLevel'] as int
-    ..nextLevelAt = json['nextLevelAt'] as int;
+    ..nextLevelAt = json['nextLevelAt'] as int
+    ..currentResetCount = json['currentResetCount'] as int
+    ..seasonResets = (json['seasonResets'] as List)
+        ?.map((e) => e == null
+            ? null
+            : DestinyProgressionResetEntry.fromJson(e as Map<String, dynamic>))
+        ?.toList();
 }
 
 Map<String, dynamic> _$DestinyFactionProgressionToJson(
@@ -39,5 +45,7 @@ Map<String, dynamic> _$DestinyFactionProgressionToJson(
       'levelCap': instance.levelCap,
       'stepIndex': instance.stepIndex,
       'progressToNextLevel': instance.progressToNextLevel,
-      'nextLevelAt': instance.nextLevelAt
+      'nextLevelAt': instance.nextLevelAt,
+      'currentResetCount': instance.currentResetCount,
+      'seasonResets': instance.seasonResets
     };

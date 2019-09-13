@@ -69,4 +69,5 @@ class DestinyActivityModeType {
   static const int ControlCompetitive = 74;
   static const int GambitPrime = 75;
   static const int Reckoning = 76;
+  static const int Menagerie = 77;
 }

@@ -171,6 +171,8 @@ class PlatformErrorCodes {
   static const int UserEmailValidationUnknown = 228;
   static const int UserEmailValidationLimit = 229;
   static const int TransactionEmailSendFailure = 230;
+  static const int MailHookPermissionFailure = 231;
+  static const int MailServiceRateLimit = 232;
   static const int MessagingUnknownError = 300;
   static const int MessagingSelfError = 301;
   static const int MessagingSendThrottle = 302;
@@ -682,4 +684,24 @@ class PlatformErrorCodes {
   static const int ClanFireteamScheduledFireteamsRange = 3024;
   static const int ClanFireteamPublicCreationRestrictionExtended = 3025;
   static const int ClanFireteamExpired = 3026;
+  static const int ClanFireteamInvalidAuthProvider = 3027;
+  static const int CrossSaveOverriddenAccountNotFound = 3200;
+  static const int CrossSaveTooManyOverriddenPlatforms = 3201;
+  static const int CrossSaveNoOverriddenPlatforms = 3202;
+  static const int CrossSavePrimaryAccountNotFound = 3203;
+  static const int CrossSaveRequestInvalid = 3204;
+  static const int CrossSaveBungieAccountValidationFailure = 3206;
+  static const int CrossSaveOverriddenPlatformNotAllowed = 3207;
+  static const int CrossSaveThresholdExceeded = 3208;
+  static const int CrossSaveIncompatibleMembershipType = 3209;
+  static const int CrossSaveCouldNotFindLinkedAccountForMembershipType = 3210;
+  static const int CrossSaveCouldNotCreateDestinyProfileForMembershipType = 3211;
+  static const int CrossSaveErrorCreatingDestinyProfileForMembershipType = 3212;
+  static const int CrossSaveCannotOverrideSelf = 3213;
+  static const int CrossSaveRecentSilverPurchase = 3214;
+  static const int CrossSaveSilverBalanceNegative = 3215;
+  static const int CrossSaveAccountNotAuthenticated = 3216;
+  static const int ErrorOneAccountAlreadyActive = 3217;
+  static const int ErrorOneAccountDestinyRestriction = 3218;
+  static const int AuthVerificationNotLinkedToAccount = 3300;
 }

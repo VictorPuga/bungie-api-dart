@@ -15,7 +15,7 @@ class App {
     params['end'] = end;
     params['start'] = start;
     HttpClientConfig config = HttpClientConfig(
-      'GET',
+      'GET', 
       "/App/ApiUsage/${applicationId}/",
     );
     config.bodyContentType = null;
@@ -28,7 +28,6 @@ class App {
       throw Exception(response.mappedBody);
     });
   }
-
   /// Get list of applications created by Bungie.
   static Future<IEnumerableOfApplicationResponse> getBungieApplications(
     HttpClient client,
@@ -36,7 +35,7 @@ class App {
   ) {
     Map<String, dynamic> params = new Map();
     HttpClientConfig config = HttpClientConfig(
-      'GET',
+      'GET', 
       "/App/FirstParty/",
     );
     config.bodyContentType = null;

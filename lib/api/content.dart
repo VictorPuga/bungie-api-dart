@@ -2,6 +2,7 @@ import '../helpers/http.dart';
 import '../responses/content_type_description_response.dart';
 import '../responses/content_item_public_contract_response.dart';
 import '../responses/search_result_of_content_item_public_contract_response.dart';
+import '../responses/iread_only_collection_of_content_item_public_contract_response.dart';
 
 class Content {
   /// Gets an object describing a particular variant of content.
@@ -132,6 +133,28 @@ class Content {
     return client.request(config).then((response) {
       if (response.statusCode == 200) {
         return SearchResultOfContentItemPublicContractResponse.fromJson(response.mappedBody);
+      }
+      throw Exception(response.mappedBody);
+    });
+  }
+  /// Search for Help Articles.
+  static Future<IReadOnlyCollectionOfContentItemPublicContractResponse> searchHelpArticles(
+    HttpClient client,
+    String searchtext,
+    String size,
+    Map<String, String> headers,
+  ) {
+    Map<String, dynamic> params = new Map();
+    HttpClientConfig config = HttpClientConfig(
+      'GET', 
+      "/Content/SearchHelpArticles/${searchtext}/${size}",
+    );
+    config.bodyContentType = null;
+    config.params = params;
+    config.headers = headers;
+    return client.request(config).then((response) {
+      if (response.statusCode == 200) {
+        return IReadOnlyCollectionOfContentItemPublicContractResponse.fromJson(response.mappedBody);
       }
       throw Exception(response.mappedBody);
     });
